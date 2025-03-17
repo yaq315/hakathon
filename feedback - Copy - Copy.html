@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحة الفيدباك</title>
+    <link rel="stylesheet" href="feedback.css">
+</head>
+<body>
+    <div class="feedback-container">
+        <h1>شاركنا رأيك!</h1>
+        <form id="feedbackForm">
+            <div class="form-group">
+                <label for="name">الاسم:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">البريد الإلكتروني:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">الرسالة:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="rating">التقييم:</label>
+                <select id="rating" name="rating">
+                    <option value="5">ممتاز</option>
+                    <option value="4">جيد جدًا</option>
+                    <option value="3">جيد</option>
+                    <option value="2">مقبول</option>
+                    <option value="1">ضعيف</option>
+                </select>
+            </div>
+            <button type="submit">إرسال</button>
+        </form>
+        <div id="thankYouMessage" class="hidden">
+            <h2>شكرًا لك على مشاركة رأيك!</h2>
+            <p>سنقوم بمراجعة تعليقك قريبًا.</p>
+        </div>
+    </div>
+    <script src="feedback.js"></script>
+</body>
+</html>

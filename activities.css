@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(245, 237, 237);
+    color: rgb(100, 130, 173);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.activities-container {
+    background-color: rgb(226, 218, 214);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+}
+
+h1 {
+    color: rgb(100, 130, 173);
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+
+.activity-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.activity-card {
+    background-color: rgb(245, 237, 237);
+    border: 1px solid rgb(127, 161, 195);
+    border-radius: 15px;
+    padding: 20px;
+    width: 30%;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    text-decoration: none; /* إزالة الخط التحتي من الروابط */
+    color: inherit; /* الحفاظ على لون النص الأصلي */
+    display: block; /* لجعل الرابط يأخذ المساحة الكاملة */
+}
+
+.activity-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.activity-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.activity-card h2 {
+    color: rgb(100, 130, 173);
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.activity-card p {
+    color: rgb(127, 161, 195);
+    font-size: 16px;
+}

@@ -1,0 +1,42 @@
+.activity-detail-container {
+    background-color: rgb(226, 218, 214);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    margin: 50px auto;
+}
+
+.activity-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.activity-info {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.activity-info p {
+    color: rgb(100, 130, 173);
+    font-size: 18px;
+}
+
+button {
+    background-color: rgb(127, 161, 195);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: rgb(100, 130, 173);
+}

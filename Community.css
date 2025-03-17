@@ -1,0 +1,144 @@
+/* تنسيق عام */
+body {
+    font-family: 'Amiri', serif; /* استخدام الخط Amiri */
+    background-color: rgb(245, 237, 237);
+    color: rgb(100, 130, 173);
+    margin: 0;
+    padding: 0;
+    text-align: right;
+}
+
+/* الهيدر */
+header {
+    background-color: rgb(100, 130, 173);
+    color: rgb(245, 237, 237);
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header p {
+    margin: 5px 0 0;
+    font-size: 1.2rem;
+}
+
+/* قسم النشر */
+.post-section {
+    background-color: rgb(226, 218, 214);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.post-section textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid rgb(127, 161, 195);
+    border-radius: 5px;
+    font-size: 1rem;
+    resize: none;
+    font-family: 'Amiri', serif; /* استخدام الخط Amiri */
+}
+
+.post-section button {
+    background-color: rgb(127, 161, 195);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: 'Amiri', serif; /* استخدام الخط Amiri */
+}
+
+.post-section button:hover {
+    background-color: rgb(100, 130, 173);
+}
+
+/* قسم المنشورات */
+.posts-container {
+    margin: 20px;
+}
+
+.post {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.post p {
+    margin: 0;
+    font-size: 1.1rem;
+    color: rgb(100, 130, 173);
+    font-family: 'Amiri', serif; /* استخدام الخط Amiri */
+}
+
+.post .post-date {
+    font-size: 0.9rem;
+    color: rgb(127, 161, 195);
+    margin-top: 10px;
+}
+
+/* أزرار التحكم */
+.post-controls {
+    margin-top: 10px;
+}
+
+.post-controls button {
+    background-color: rgb(127, 161, 195);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-family: 'Amiri', serif; /* استخدام الخط Amiri */
+}
+
+.post-controls button:hover {
+    background-color: rgb(100, 130, 173);
+}
+
+/* قسم الردود */
+.replies {
+    margin-top: 10px;
+    padding-left: 20px;
+    border-left: 2px solid rgb(127, 161, 195);
+}
+
+.reply {
+    background-color: rgb(245, 237, 237);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.reply p {
+    margin: 0;
+    font-size: 1rem;
+    color: rgb(100, 130, 173);
+    font-family: 'Amiri', serif; /* استخدام الخط Amiri */
+}
+
+.reply .reply-date {
+    font-size: 0.8rem;
+    color: rgb(127, 161, 195);
+    margin-top: 5px;
+}
+
+/* الصور في المنشورات */
+.post-image {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-top: 10px;
+}
