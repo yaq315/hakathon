@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل - ساهم في رمضان</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to bottom, rgb(100, 130, 173), rgb(127, 161, 195));
+            padding: 2rem;
+        }
+
+        .container-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            background-color: rgb(226, 218, 214);
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+            padding: 3rem;
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        .logo-section {
+            flex: 1;
+            text-align: center;
+        }
+
+        .logo-section img {
+            width: 250px;
+            height: auto;
+            margin-bottom: 1.5rem;
+        }
+
+        .logo-section h2 {
+            color: rgb(100, 130, 173);
+            font-size: 1.8rem;
+            margin-top: 1rem;
+        }
+
+        .signup-container {
+            flex: 1;
+            background-color: rgb(245, 237, 237);
+            padding: 2rem;
+            border-radius: 15px;
+            max-width: 400px;
+        }
+
+        h1 {
+            color: rgb(100, 130, 173);
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.4rem;
+            color: rgb(100, 130, 173);
+            font-weight: 600;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.7rem;
+            border: 2px solid rgb(127, 161, 195);
+            border-radius: 6px;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: rgb(100, 130, 173);
+            box-shadow: 0 0 5px rgba(100, 130, 173, 0.3);
+        }
+
+        .error-message {
+            color: #dc3545;
+            font-size: 0.85rem;
+            margin-top: 0.3rem;
+            display: none;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 0.9rem;
+            background-color: rgb(127, 161, 195);
+            color: rgb(245, 237, 237);
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        button[type="submit"]:hover {
+            background-color: rgb(100, 130, 173);
+        }
+
+        .social-login {
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+
+        .social-login p {
+            color: rgb(100, 130, 173);
+            margin-bottom: 1rem;
+        }
+
+        .social-btns {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .social-btn {
+            padding: 0.7rem 1.2rem;
+            border: 2px solid rgb(127, 161, 195);
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: white;
+            color: rgb(100, 130, 173);
+        }
+
+        .social-btn:hover {
+            background-color: rgb(127, 161, 195);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .container-wrapper {
+                flex-direction: column;
+                gap: 2rem;
+                padding: 2rem;
+            }
+
+            .logo-section img {
+                width: 200px;
+            }
+
+            .signup-container {
+                width: 100%;
+                max-width: 100%;
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 1rem;
+            }
+
+            .container-wrapper {
+                padding: 1.5rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .logo-section h2 {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container-wrapper">
+        <div class="logo-section">
+            <img src="Brown_Simple_Aesthetic_Bag_Store_Logo-removebg-preview.png" alt="شعار ساهم في رمضان"  width="400px" height="400px">
+            <!-- <h2>نحو رمضان أكثر عطاءً</h2> -->
+        </div>
+
+        <div class="signup-container">
+            <h1>انشاء حساب جديد</h1>
+            <form id="signupForm">
+                <div class="form-group">
+                    <label for="name">الاسم الكامل</label>
+                    <input type="text" id="name" required>
+                    <div class="error-message" id="nameError">الاسم يجب أن يحتوي على أحرف عربية/إنجليزية فقط</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">البريد الإلكتروني</label>
+                    <input type="email" id="email" required>
+                    <div class="error-message" id="emailError">صيغة البريد الإلكتروني غير صحيحة</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">كلمة المرور</label>
+                    <input type="password" id="password" required>
+                    <div class="error-message" id="passwordError">يجب أن تحتوي كلمة المرور على 8 أحرف على الأقل مع مزيج من الأحرف والأرقام</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">رقم الهاتف</label>
+                    <input type="tel" id="phone" required>
+                    <div class="error-message" id="phoneError">رقم الهاتف غير صالح</div>
+                </div>
+
+                <button type="submit">تسجيل حساب</button>
+            </form>
+
+            
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Regex patterns
+        const patterns = {
+            name: /^[\u0600-\u06FFa-zA-Z\s]{3,}$/,
+            email: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+            password: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/,
+            phone: /^(\+?966|0)?5[0-9]{8}$/
+        };
+
+        // Validation function
+        function validate(field, regex) {
+            const isValid = regex.test(field.value);
+            const errorElement = document.getElementById(`${field.id}Error`);
+            
+            if (!isValid) {
+                errorElement.style.display = 'block';
+                field.style.borderColor = '#dc3545';
+            } else {
+                errorElement.style.display = 'none';
+                field.style.borderColor = '#7fa1c3';
+            }
+            return isValid;
+        }
+
+        // Form submission handler
+        document.getElementById('signupForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const inputs = [
+                document.getElementById('name'),
+                document.getElementById('email'),
+                document.getElementById('password'),
+                document.getElementById('phone')
+            ];
+
+            let formValid = true;
+            
+            inputs.forEach(input => {
+                if (!validate(input, patterns[input.id])) {
+                    formValid = false;
+                }
+            });
+
+            if (formValid) {
+                // Save to Local Storage
+                const userData = {
+                    name: inputs[0].value,
+                    email: inputs[1].value,
+                    phone: inputs[3].value
+                };
+                localStorage.setItem('user', JSON.stringify(userData));
+                
+                alert('تم التسجيل بنجاح! سيتم توجيهك إلى الصفحة الرئيسية');
+                window.location.href = 'profile.html';
+            }
+        });
+
+        // Real-time validation
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('input', () => validate(input, patterns[input.id]));
+        });
+    </script>
+</body>
+</html>

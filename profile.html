@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الملف الشخصي - ساهم في رمضان</title>
+    <style>
+        :root {
+            --primary-color: rgb(100, 130, 173);
+            --secondary-color: rgb(127, 161, 195);
+            --background-light: rgb(245, 237, 237);
+            --text-dark: rgb(50, 50, 50);
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .profile-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--background-light);
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            padding: 2rem;
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .user-info {
+            flex: 1;
+        }
+
+        .user-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        .stats-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .activities-section, .donations-section {
+            margin-bottom: 3rem;
+        }
+
+        .activity-item, .donation-item {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .activity-item:hover {
+            transform: translateX(10px);
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .badge {
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .meal-badge { background: #FFE082; }
+        .clothing-badge { background: #C8E6C9; }
+        .medical-badge { background: #FFCDD2; }
+        .education-badge { background: #BBDEFB; }
+
+        .nav-link {
+            display: block;
+            text-align: center;
+            padding: 1rem;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 8px;
+            margin-top: 1rem;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .nav-link:hover {
+            background: var(--secondary-color);
+        }
+
+        @media (max-width: 768px) {
+            .profile-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .user-avatar {
+                margin: 0 auto;
+            }
+        }
+
+        @keyframes refresh {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .refreshing {
+            animation: refresh 1s linear infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <!-- رأس الملف الشخصي -->
+        <div class="profile-header">
+            <div class="user-avatar" id="userAvatar">?</div>
+            <div class="user-info">
+                <h1 id="userName">اسم المستخدم</h1>
+                <p id="userEmail">user@example.com</p>
+                <p id="userPhone">+966500000000</p>
+            </div>
+        </div>
+
+        <!-- بطاقات الإحصائيات -->
+        <div class="stats-cards">
+            <div class="stat-card">
+                <h3>إجمالي التبرعات</h3>
+                <p class="total-donations">0 ريال</p>
+            </div>
+            <div class="stat-card">
+                <h3>عدد الأنشطة</h3>
+                <p class="total-activities">0 نشاط</p>
+            </div>
+            <div class="stat-card">
+                <h3>النقاط المتراكمة</h3>
+                <p class="total-points">0 نقطة</p>
+            </div>
+        </div>
+
+        <!-- قسم التبرعات -->
+        <div class="donations-section">
+            <h2>سجل التبرعات</h2>
+            <div id="donationsList">
+                <!-- يتم إضافة التبرعات هنا عبر الجافاسكريبت -->
+            </div>
+        </div>
+
+        <!-- قسم الأنشطة -->
+        <div class="activities-section">
+            <h2>الأنشطة المشارك بها</h2>
+            <div id="activitiesList">
+                <!-- يتم إضافة الأنشطة هنا عبر الجافاسكريبت -->
+            </div>
+            <a href="activity.html" class="nav-link">⚡ انضم إلى نشاط جديد</a>
+        </div>
+    </div>
+
+    <script>
+        // جلب بيانات المستخدم من Local Storage
+        const userData = JSON.parse(localStorage.getItem('user')) || {};
+        const donations = JSON.parse(localStorage.getItem('donations')) || [];
+        const activities = JSON.parse(localStorage.getItem('activities')) || [];
+
+        // تعبئة بيانات المستخدم
+        document.getElementById('userName').textContent = userData.name || 'مستخدم جديد';
+        document.getElementById('userEmail').textContent = userData.email || 'لا يوجد بريد مسجل';
+        document.getElementById('userPhone').textContent = userData.phone || 'لا يوجد رقم هاتف';
+        document.getElementById('userAvatar').textContent = userData.name ? userData.name.charAt(0) : '?';
+
+        // دالة لإنشاء عناصر التبرعات
+        function renderDonations() {
+            const donationsList = document.getElementById('donationsList');
+            donationsList.innerHTML = donations.map(donation => `
+                <div class="donation-item">
+                    <div>
+                        <h4>${donation.type}</h4>
+                        <p>${new Date(donation.date).toLocaleDateString()}</p>
+                    </div>
+                    <div>
+                        <span class="badge ${getBadgeClass(donation.type)}">${donation.type}</span>
+                        <p>${donation.amount} ريال</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // دالة لإنشاء عناصر الأنشطة
+        function renderActivities() {
+            const activitiesList = document.getElementById('activitiesList');
+            activitiesList.innerHTML = activities.map(activity => `
+                <div class="activity-item" onclick="window.location.href='activity.html'">
+                    <div>
+                        <h4>${activity.title}</h4>
+                        <p>${activity.location}</p>
+                    </div>
+                    <div>
+                        <p>${new Date(activity.date).toLocaleDateString()}</p>
+                        <span class="badge">${activity.status}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // دالة مساعدة لتحديد لون البادج
+        function getBadgeClass(type) {
+            const classes = {
+                'وجبات الإفطار': 'meal-badge',
+                'كسوة العيد': 'clothing-badge',
+                'تبرع طبي': 'medical-badge',
+                'التعليم': 'education-badge'
+            };
+            return classes[type] || '';
+        }
+
+        // تحديث الإحصائيات
+        function updateStats() {
+            document.querySelector('.total-donations').textContent = 
+                donations.reduce((sum, d) => sum + d.amount, 0) + ' ريال';
+            
+            document.querySelector('.total-activities').textContent = 
+                activities.length + ' نشاط';
+            
+            document.querySelector('.total-points').textContent = 
+                (donations.length * 10) + (activities.length * 5) + ' نقطة';
+        }
+
+        // التشغيل الأولي
+        renderDonations();
+        renderActivities();
+        updateStats();
+    </script>
+</body>
+</html>
