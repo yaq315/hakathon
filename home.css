@@ -168,6 +168,72 @@ body::before {
     background-color: #2980b9;
 }
 
+#about-us {
+    background-image: url('image/205-224101-image-3-_700x400.jpg'); /* الصورة كخلفية */
+    background-size: cover; /* تغطية كاملة للخلفية */
+    background-position: center; /* توسيط الصورة */
+    background-repeat: no-repeat; /* منع تكرار الصورة */
+    padding: 60px 20px; /* حشو داخلي */
+    text-align: center; /* محاذاة النص إلى الوسط */
+    color: white; /* لون النص الأبيض */
+    position: relative; /* لجعل الطبقات تعمل بشكل صحيح */
+}
+
+/* طبقة شبه شفافة فوق الخلفية */
+#about-us::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* لون أسود شفاف */
+    z-index: 1; /* وضع الطبقة فوق الخلفية */
+}
+
+/* تنسيق المحتوى داخل القسم */
+.about-content {
+    position: relative; /* لجعل النص فوق الطبقة الشفافة */
+    z-index: 2; /* وضع النص فوق الطبقة الشفافة */
+}
+
+/* تنسيق العنوان */
+#about-us h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: rgb(245, 237, 237); /* لون العنوان */
+}
+
+/* تنسيق الفقرات */
+#about-us p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    color: rgb(226, 218, 214); /* لون النص */
+}
+
+/* استعلامات الوسائط للتجاوب */
+@media (max-width: 768px) {
+    #about-us h2 {
+        font-size: 24px;
+    }
+
+    #about-us p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    #about-us h2 {
+        font-size: 20px;
+    }
+
+    #about-us p {
+        font-size: 14px;
+    }
+}
+
+
 /* قسم الأنشطة الخيرية */
 .activities-section {
     padding: 40px 20px;
