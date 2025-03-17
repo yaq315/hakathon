@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ساهم في رمضان</title>
+    <link rel="stylesheet" href="home.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- شريط التنقل -->
+    <nav class="navbar">
+      <div class="container">
+        <!-- الشعار -->
+        <a href="#" class="logo">
+          <img src="images/لوغو.png" alt="شعار الموقع" />
+        </a>
+
+        <!-- روابط التنقل -->
+        <ul class="nav-links">
+          <li><a href="#home">الرئيسية</a></li>
+          <!-- <li><a href="#about">من نحن</a></li> -->
+          <li><a href="Community.html">المدونة</a></li>
+          <li><a href="activities.html">التبرعات</a></li>
+          <li><a href="activities.html">التطوع</a></li>
+          <li>
+            <a href="login.html" class="login-link"
+              ><i class="fas fa-user"></i> تسجيل الدخول</a
+            >
+          </li>
+        </ul>
+
+        <!-- زر القائمة الهامبرجر -->
+        <button class="hamburger" onclick="toggleMenu()">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- الصفحة الرئيسية -->
+    <section id="home" class="hero-section">
+      <div class="hero">
+        <h2><i class="fas fa-heart"></i> شارك في الخير هذا رمضان</h2>
+        <p>ساهم في إسعاد المحتاجين من خلال التبرع للأنشطة الخيرية المختلفة.</p>
+        <a href="#activities" class="cta-button"
+          ><i class="fas fa-search"></i> اكتشف الأنشطة</a
+        >
+      </div>
+    </section>
+    <!-- قسم الفيديو -->
+    <section id="video" class="video-section">
+      <h2><i class="fas fa-video"></i> فيديو تعريفي</h2>
+      <div class="video-container">
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/VIDEO_ID"
+          title="فيديو تعريفي"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        >
+        </iframe>
+      </div>
+    </section>
+
+    <!-- قسم الأنشطة الخيرية -->
+    <section id="activities" class="activities-section">
+      <h2><i class="fas fa-hands-helping"></i> الأنشطة الخيرية</h2>
+      <div class="activities">
+        <!-- نشاط وجبات الإفطار -->
+        <div class="activity">
+          <div class="activity-image">
+            <img
+              src="images/acti1.jpg"
+              alt="وجبات الإفطار"
+              style="width: 300px; height: 200px; object-fit: cover"
+            />
+          </div>
+          <div class="activity-details">
+            <i class="fas fa-utensils icon"></i>
+            <h3>وجبات الإفطار</h3>
+            <p>تبرع بوجبة إفطار لشخص محتاج.</p>
+            <button onclick="donate('وجبات الإفطار')">
+              <i class="fas fa-donate"></i> تبرع الآن
+            </button>
+          </div>
+        </div>
+
+        <!-- نشاط كسوة العيد -->
+        <div class="activity">
+          <div class="activity-image">
+            <img
+              src="images/acti2.jpg"
+              alt="كسوة العيد"
+              style="width: auto; height: 200px; object-fit: cover"
+            />
+          </div>
+          <div class="activity-details">
+            <i class="fas fa-tshirt icon"></i>
+            <h3>تنظيف المساجد</h3>
+            <p>ساعد في تنظيف بيوت الله .</p>
+            <button onclick="donate('كسوة العيد')">
+              <i class="fas fa-donate"></i> سجل الآن
+            </button>
+          </div>
+        </div>
+
+        <!-- نشاط التعليم -->
+        <div class="activity">
+          <div class="activity-image">
+            <img
+              src="images/acti2.webp"
+              alt="التعليم"
+              style="width: 300px; height: 200px; object-fit: cover"
+            />
+          </div>
+          <div class="activity-details">
+            <i class="fas fa-book-open icon"></i>
+            <h3>التعليم</h3>
+            <p>ادعم تعليم الأطفال بتوفير المستلزمات المدرسية.</p>
+            <button onclick="donate('التعليم')">
+              <i class="fas fa-donate"></i> تبرع الآن
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- قسم الإحصائيات
+    <section id="statistics" class="statistics-section">
+      <h2><i class="fas fa-chart-line"></i> الإحصائيات</h2>
+      <div class="stats">
+        <div class="stat">
+          <h3>إجمالي التبرعات</h3>
+          <p id="totalDonations">0</p>
+        </div>
+        <div class="stat">
+          <h3>وجبات الإفطار</h3>
+          <p id="mealsDonated">0</p>
+        </div>
+        <div class="stat">
+          <h3>تنظيف المساجد</h3>د</h3>
+          <p id="clothesDonated">0</p>
+        </div>
+        <div class="stat">
+          <h3>التعليم</h3>
+          <p id="educationDonated">0</p>
+        </div>
+        <div class="stat">
+          <h3>نقاطك</h3>
+          <p id="userPoints">0</p>
+        </div>
+      </div>
+    </section> -->
+    <!-- Be A Volunteer Today -->
+    <section id="volunteer" class="volunteer">
+      <div class="container">
+        <div class="volunteer-content">
+          <div class="volunteer-text">
+            <h2>كن متطوعًا اليوم</h2>
+            <p>انضم إلى مجتمعنا وساعد في إحداث تغيير إيجابي في حياة الآخرين.</p>
+            <form id="volunteerForm">
+              <input
+                type="text"
+                id="volunteerName"
+                placeholder="اسمك"
+                required
+              />
+              <input
+                type="email"
+                id="volunteerEmail"
+                placeholder="بريدك الإلكتروني"
+                required
+              />
+              <input
+                type="tel"
+                id="volunteerPhone"
+                placeholder="رقم هاتفك"
+                required
+              />
+              <textarea
+                id="volunteerMessage"
+                placeholder="لماذا تريد التطوع؟"
+                required
+              ></textarea>
+              <button type="submit">تقديم الطلب</button>
+            </form>
+          </div>
+          <div class="volunteer-image">
+            <img src="images/تطوع.png" alt="متطوعون" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="site-footer">
+      <div class="footer-container">
+        <!-- قسم معلومات الاتصال -->
+        <div class="footer-section">
+          <h4>ساهم في رمضان</h4>
+          <p class="footer-description">
+            منصة إلكترونية لجعل العطاء أسهل وأكثر تأثيرًا
+          </p>
+          <div class="contact-info">
+            <p><i class="fas fa-envelope"></i> info@sahimramadan.com</p>
+            <p><i class="fas fa-phone"></i> +966 5X XXX XXXX</p>
+            <p>
+              <i class="fas fa-map-marker"></i> الرياض، المملكة العربية السعودية
+            </p>
+          </div>
+        </div>
+
+        <!-- الروابط السريعة -->
+        <div class="footer-section">
+          <h4>اكتشف المزيد</h4>
+          <ul class="footer-links">
+            <li><a href="#activities">الحملات النشطة</a></li>
+            <li><a href="#donation">أساليب التبرع</a></li>
+            <li><a href="#tracking">متابعة التبرعات</a></li>
+            <li><a href="#stories">تجارب المستخدمين</a></li>
+            <li><a href="#forum">الأسئلة الشائعة</a></li>
+          </ul>
+        </div>
+
+        <!-- قنوات التبرع -->
+        <div class="footer-section">
+          <h4>قنوات الدعم</h4>
+          <ul class="donation-methods">
+            <li>حملات غذائية</li>
+            <li>دعم تعليمي</li>
+            <li>رعاية طبية</li>
+            <li>مبادرات اجتماعية</li>
+          </ul>
+        </div>
+
+        <!-- التواصل والاشتراك -->
+        <div class="footer-section">
+          <h4>تواصل معنا</h4>
+          <div class="social-media">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-telegram"></i></a>
+          </div>
+
+          <div class="newsletter">
+            <input type="email" placeholder="البريد الإلكتروني" />
+            <button class="subscribe-btn">اشترك في النشرة</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- حقوق النشر -->
+      <div class="footer-bottom">
+        <div class="legal-links">
+          <a href="#privacy">سياسة الخصوصية</a> |
+          <a href="#terms">الشروط العامة</a> |
+          <a href="#contact">اتصل بنا</a>
+        </div>
+        <p class="copyright">
+          &copy; 2024 ساهم في رمضان - منصة العطاء الرمضاني
+        </p>
+      </div>
+    </footer>
+   
+
+    <!-- JavaScript -->
+    <script src="main.js"></script>
+  </body>
+</html>
